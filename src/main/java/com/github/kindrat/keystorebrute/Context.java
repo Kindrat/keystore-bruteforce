@@ -3,8 +3,11 @@ package com.github.kindrat.keystorebrute;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
+/**
+ * Configuration for application. Useful for mocks.
+ */
 public final class Context {
-   public Config config;
+   public final Config config;
 
    public Context(){
       config = withConfigFile();
