@@ -13,10 +13,18 @@ import java.util.stream.Stream;
 public final class Storage implements Serializable{
    private static final Logger LOG = LoggerFactory.getLogger(Storage.class);
    private static final long serialVersionUID = -6578793091933529663L;
-   private final AtomicLong counter;
-   private final long loggingStep;
+   private AtomicLong counter;
+   private long loggingStep;
    private Set<String> passwords = new ConcurrentSkipListSet<>();
 
+   public Storage() {
+   }
+
+   /**
+    * For generator
+    * @param counter passwords to write
+    * @param loggingStep when to log
+    */
    public Storage(AtomicLong counter, long loggingStep) {
       this.counter = counter;
       this.loggingStep = loggingStep;
